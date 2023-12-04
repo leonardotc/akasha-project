@@ -1,15 +1,15 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { YourContract } from "../typechain-types";
+import { Overseer } from "../typechain-types";
 
-describe("YourContract", function () {
+describe("Overseer", function () {
   // We define a fixture to reuse the same setup in every test.
 
-  let yourContract: YourContract;
+  let yourContract: Overseer;
   before(async () => {
     const [owner] = await ethers.getSigners();
-    const yourContractFactory = await ethers.getContractFactory("YourContract");
-    yourContract = (await yourContractFactory.deploy(owner.address)) as YourContract;
+    const yourContractFactory = await ethers.getContractFactory("Overseer");
+    yourContract = (await yourContractFactory.deploy(owner.address)) as Overseer;
     await yourContract.deployed();
   });
 
